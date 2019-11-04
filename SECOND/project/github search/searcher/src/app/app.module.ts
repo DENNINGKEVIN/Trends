@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { TimeCountPipe } from './time-count.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     NavbarComponent,
     NotFoundComponent,
     RepositoryDetailsComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    TimeCountPipe
   ],
   imports: [
     BrowserModule,
