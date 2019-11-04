@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RepositoryDetailsComponent } from './repository-details/repository-details.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { TimeCountPipe } from './time-count.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TimeCountPipe } from './time-count.pipe';
     NotFoundComponent,
     RepositoryDetailsComponent,
     UserDetailsComponent,
-    TimeCountPipe
+    TimeCountPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
