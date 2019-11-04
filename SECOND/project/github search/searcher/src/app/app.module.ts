@@ -11,6 +11,7 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { TimeCountPipe } from './time-count.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { SearchFormComponent } from './search-form/search-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HighlightDirective } from './highlight.directive';
     RepositoryDetailsComponent,
     UserDetailsComponent,
     TimeCountPipe,
-    HighlightDirective
+    HighlightDirective,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
