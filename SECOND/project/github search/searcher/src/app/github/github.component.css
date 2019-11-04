@@ -1,0 +1,65 @@
+*{
+  margin: 0;   
+  
+
+}
+
+.card{
+  margin-bottom: 20px;
+}
+
+.mb-5{
+  background-color: #1A345B;
+}
+
+h3{
+  font-size: 17px;
+ 
+}
+
+h2{
+  color: white;
+}
+
+.row{
+  margin-top: 5px;
+  padding-top: 20px;
+}
+
+img{
+  margin-top: -50px;
+}
+
+.card{
+  margin-top: 50px;
+  box-shadow: 5px 50x 15px #e74c3c;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in    
+}
+
+.card-body:hover{
+  background:  #e74c3c;
+  color: white;    
+  border-radius: 5px;
+  box-shadow: 5px 50x 10px #9E9E9E;
+   
+}
+
+.card-body{
+  background-color: white;
+
+}
+
+#repos p{
+  font-size: 13px;
+}
+
+#repos .card{
+  width: 30vh;
+  text-align: left;
+}
+
+#users .card{
+  width: 30vh;
+}
