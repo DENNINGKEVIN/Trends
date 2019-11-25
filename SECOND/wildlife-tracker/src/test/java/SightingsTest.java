@@ -75,6 +75,15 @@ public class SightingsTest {
         testSighting.delete();
         assertEquals(null, Sighting.find(testSighting.getId()));
     }
-
-
+//    @Test
+//    public void getAnimals_retrievesAllAnimalsFromDatabase_animalList() {
+//        Sighting testSighting=setupSighting();
+//        testSighting.save();
+//        EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("Tiger","ill","old");
+//        testEndangeredAnimal.save();
+//        EndangeredAnimal testEndangeredAnimal1 = new EndangeredAnimal("Tiger","ill","old");
+//        testEndangeredAnimal1.save();
+//        Object[] animals = new Object[] { testEndangeredAnimal, testEndangeredAnimal1 };
+//        assertTrue(testSighting.getSightings().containsAll(Arrays.asList(animals)));
+//    }
 }

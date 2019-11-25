@@ -82,7 +82,7 @@ public class EndangeredAnimalTest {
         assertEquals(null, EndangeredAnimal.find(testEndangeredAnimal.getId()));
     }
     @Test
-    public void getMonsters_retrievesAllAnimalsFromDatabase_animalList() {
+    public void getAnimals_retrievesAllAnimalsFromDatabase_animalList() {
         Sighting testSighting=new Sighting("zone B","Zulu",1);
         testSighting.save();
         EndangeredAnimal testEndangeredAnimal = setupEndangeredAnimal();
