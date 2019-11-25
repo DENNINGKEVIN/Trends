@@ -1,4 +1,7 @@
 import org.junit.*;
+
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class EndangeredAnimalTest {
@@ -55,7 +58,7 @@ public class EndangeredAnimalTest {
         assertEquals(savedEndangeredAnimal.getId(), testEndangeredAnimal.getId());
     }
     @Test
-    public void all_returnsAllInstancesOfFireMonster_true() {
+    public void all_returnsAllInstancesOfEndangeredAnimal_true() {
         EndangeredAnimal firstEndageredAnimal = setupEndangeredAnimal();
         firstEndageredAnimal.save();
         EndangeredAnimal secondEndangeredAnimal = setupEndangeredAnimal();
@@ -64,7 +67,7 @@ public class EndangeredAnimalTest {
         assertEquals(true, EndangeredAnimal.all().get(1).equals(secondEndangeredAnimal));
     }
     @Test
-    public void find_returnsFireMonsterWithSameId_secondFireMonster() {
+    public void find_returnsEndangeredAnimalWithSameId_secondFireMonster() {
         EndangeredAnimal firstEndageredAnimal = setupEndangeredAnimal();
         firstEndageredAnimal.save();
         EndangeredAnimal secondEndangeredAnimal = setupEndangeredAnimal();
@@ -78,7 +81,17 @@ public class EndangeredAnimalTest {
         testEndangeredAnimal.delete();
         assertEquals(null, EndangeredAnimal.find(testEndangeredAnimal.getId()));
     }
-
+    @Test
+    public void getMonsters_retrievesAllAnimalsFromDatabase_animalList() {
+        Sighting testSighting=new Sighting("zone B","Zulu",1);
+        testSighting.save();
+        EndangeredAnimal testEndangeredAnimal = setupEndangeredAnimal();
+        testEndangeredAnimal.save();
+        EndangeredAnimal testEndangeredAnimal1 = setupEndangeredAnimal();
+        testEndangeredAnimal1.save();
+        Object[] animals = new Object[] { testEndangeredAnimal, testEndangeredAnimal1 };
+        assertTrue(testSighting.getSightings().containsAll(Arrays.asList(animals)));
+    }
 
 
 
