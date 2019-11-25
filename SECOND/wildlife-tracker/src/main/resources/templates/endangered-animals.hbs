@@ -2,16 +2,47 @@
 
     <h1>Endangered Animals</h1>
     {{#if animals}}
-        <div class="row">
-            <ul >
+        <table class="table">
+            <caption>List of animals</caption>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
                 {{#each animals}}
-                    <li><a href="/endangered-animals/{{id}}">{{name}}</a></li>
-                    <li><a href="/endangered-animals/{{id}}">{{health}}</a></li>
-                    <li><a href="/endangered-animals/{{id}}">{{age}}</a></li>
+                <td>{{name}}</td>
+               {{/each}}
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                {{#each animals}}
+                <td>{{health}}</td>
                 {{/each}}
-            </ul>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                {{#each animals}}
+                <td>{{age}}</td>
+                {{/each}}
+            </tr>
+            </tbody>
+        </table>
+<!--        <div class="row">-->
+<!--            <ul >-->
+<!--                {{#each animals}}-->
+<!--                    <li><a href="/endangered-animals/{{id}}">{{name}}</a></li>-->
+<!--                    <li><a href="/endangered-animals/{{id}}">{{health}}</a></li>-->
+<!--                    <li><a href="/endangered-animals/{{id}}">{{age}}</a></li>-->
+<!--                {{/each}}-->
+<!--            </ul>-->
 
-        </div>
+<!--        </div>-->
     {{else}}
         <p style="color:white;">No Endangered Animals Yet.</p>
     {{/if}}

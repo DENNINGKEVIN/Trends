@@ -1,18 +1,65 @@
+<!--{{#partial "content"}}-->
+
+<!--    <h1>All Sightings</h1>-->
+<!--    {{#if sightings}}-->
+<!--        <div class="row">-->
+<!--            <ul >-->
+<!--                {{#each sightings}}-->
+<!--                    <li><a href="/sightings-details/{{id}}">{{name}}</a></li>-->
+<!--                {{/each}}-->
+<!--            </ul>-->
+
+<!--        </div>-->
+<!--    {{else}}-->
+<!--        <p style="color:white;">No sightings Yet.</p>-->
+<!--    {{/if}}-->
+
+<!--{{/partial}}-->
+<!--{{> layout.hbs }}-->
+
 {{#partial "content"}}
+    <div >
+        {{#if foundSighting}}
+            <table class="table">
+                <caption>List of sightings</caption>
+                <thead>
+                <tr>
+                    <th scope="col">{{id}}</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Ranger Name</th>
+                    <th scope="col">Animal</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    {{#each foundSighting}}
+                        <td>{{ foundSighting.location }}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    {{#each foundSighting}}
+                        <td>{{ foundSighting.rangername }}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    {{#each foundSighting}}
+                        <td>{{ foundSighting.animalid }}</td>
+                    {{/each}}
+                </tr>
+                </tbody>
+            </table>
 
-    <h1>All Sightings</h1>
-    {{#if sightings}}
-        <div class="row">
-            <ul >
-                {{#each sightings}}
-                    <li><a href="/sightings-details/{{id}}">{{name}}</a></li>
-                {{/each}}
-            </ul>
+        {{else}}
+            <p style="color:white;">No Sightings Yet.</p>
+        {{/if}}
 
-        </div>
-    {{else}}
-        <p style="color:white;">No sightings Yet.</p>
-    {{/if}}
+
+
+    </div>
 
 {{/partial}}
-{{> layout.hbs }}
+
+{{> layout.hbs}}
