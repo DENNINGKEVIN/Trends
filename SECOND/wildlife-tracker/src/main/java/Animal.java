@@ -1,5 +1,7 @@
 import org.sql2o.Connection;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Animal {
@@ -28,6 +30,27 @@ public abstract class Animal {
                     .executeUpdate()
                     .getKey();
         }
+    }
+    public List<Object> getAnimals() {
+        List<Object> allAnimals = new ArrayList<Object>();
+
+        try(Connection con = DB.sql2o.open()) {
+            String sqlSighting = "SELECT * FROM animals WHERE animalid=:id";
+            List<Sighting> animals = con.createQuery(sqlSighting)
+                    .addParameter("id", this.id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(Sighting.class);
+            allAnimals.addAll(animals);
+
+            String sqlEndangeredAnimal = "SELECT * FROM animals WHERE animalid=:id AND type='endangered';";
+            List<Sighting> endangeredAnimals = con.createQuery(sqlEndangeredAnimal)
+                    .addParameter("id", this.id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(Sighting.class);
+            allAnimals.addAll(endangeredAnimals);
+        }
+
+        return allAnimals;
     }
     public static void update(int id, String name) {
         try (Connection con = DB.sql2o.open()) {

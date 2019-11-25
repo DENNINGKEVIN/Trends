@@ -1,0 +1,29 @@
+{{#partial "content"}}
+
+    <h2>Add Animal</h2>
+
+    <form action="/posts/animals/new" method="post" >
+        <label for="name">Animal Name</label>
+        <input id="name" name="name" type="text" >
+        <br>
+        <label for="health">Health</label>
+        <select id="health" name="health">
+            <option value="{{id}}">Healthy</option>
+            <option value="{{id}}">Ill</option>
+            <option value="{{id}}">Okay</option>
+        </select>
+        <br>
+        <label for="health">Age</label>
+        <select id="health" name="health">
+            <option value="{{id}}">NewBorn</option>
+            <option value="{{id}}">Young</option>
+            <option value="{{id}}">Adult</option>
+        </select>
+        <br><br>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+{{/partial}}
+
+{{> layout.hbs}}
