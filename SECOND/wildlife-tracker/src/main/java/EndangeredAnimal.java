@@ -1,15 +1,19 @@
+import org.sql2o.Connection;
+
+import java.util.List;
 import java.util.Objects;
 
-public class EndangeredAnimal  {
-    public int id;
-    public String name;
-    public String health;
-    public int age;
+public class EndangeredAnimal extends Animal{
 
-    public EndangeredAnimal(String name,String health,int age){
+    private String health;
+    private String age;
+    public static final String DATABASE_TYPE = "endangered";
+
+    public EndangeredAnimal(String name,String health,String age){
         this.name=name;
         this.health=health;
         this.age=age;
+        type=DATABASE_TYPE;
     }
 
     public String getName() {
@@ -20,22 +24,57 @@ public class EndangeredAnimal  {
         return health;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
+    }
+
+    public static String getDatabaseType() {
+        return DATABASE_TYPE;
+    }
+
+    public static List<EndangeredAnimal> all() {
+        String sql = "SELECT * FROM animals WHERE type='endangered';";
+        try(Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(EndangeredAnimal.class);
+        }
+    }
+    public static EndangeredAnimal find(int id) {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM animals where id=:id";
+            EndangeredAnimal animal = con.createQuery(sql)
+                    .addParameter("id", id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(EndangeredAnimal.class);
+            return animal;
+        }
+    }
+    public void save() {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO animals (name, health, age, type) VALUES (:name, :health, :age, :type)";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("name", this.name)
+                    .addParameter("health", this.health)
+                    .addParameter("age", this.age)
+                    .addParameter("type", this.type)
+                    .executeUpdate()
+                    .getKey();
+        }
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         EndangeredAnimal that = (EndangeredAnimal) o;
-        return age == that.age &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(health, that.health);
+        return Objects.equals(health, that.health) &&
+                Objects.equals(age, that.age);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, health, age);
+        return Objects.hash(super.hashCode(), health, age);
     }
 }
