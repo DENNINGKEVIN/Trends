@@ -22,12 +22,28 @@ public class Sighting {
         return location;
     }
 
-    public String getrangername() {
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getRangername() {
         return rangername;
     }
 
-    public int getanimalid() {
+    public void setRangername(String rangername) {
+        this.rangername = rangername;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAnimalid() {
         return animalid;
+    }
+
+    public void setAnimalid(int animalid) {
+        this.animalid = animalid;
     }
 
     public int getId() {

@@ -1,12 +1,15 @@
 {{#partial "content"}}
     <div >
+        <h1>Sightings</h1>
+        <hr>
         {{#if sightings}}
-<ul>
+       <ul>
     {{#each sightings}}
-        <li><a href="/sighting-details/{{id}}">{{foundSightings.name}}</a></li>
+        <li id="site"><a href="/sighting-details/{{id}}">{{ location }}</a></li>
+        <hr>
     {{/each}}
 
-</ul>
+      </ul>
 
 
 

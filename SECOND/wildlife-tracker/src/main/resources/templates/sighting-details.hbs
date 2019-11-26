@@ -1,17 +1,21 @@
 
 {{#partial "content"}}
-    {{#each squads}}
-        <p class="font-weight-bold">Location: {{ name }}</p>
-        <p class="font-weight-bold">Ranger Name: {{ cause}}</p>
-        <p class="font-weight-bold">Animal: {{ animal.name }}</p>
+    <div id="site">
+    <hr>
+        <p class="font-weight-bold">Location: {{ sightings.location }}</p>
+    <hr>
+        <p class="font-weight-bold">Ranger Name: {{ sightings.rangername }}</p>
+    <hr>
+        <p class="font-weight-bold">Animal: {{ sightings.animalid }}</p>
+    <hr>
+        <p class="font-weight-bold">Animal name: {{ animal.name }}</p>
+    <hr>
+        <p class="font-weight-bold">Animal health: {{ animal.health }}</p>
+    <hr>
+        <p class="font-weight-bold">Animal age: {{ animal.age }}</p>
+    <hr>
 
-
-        <p>
-            <!--            <a class="btn btn-outline-primary" href="/squad/{{id}}/update">Edit Squad Details</a>-->
-            <a class="btn btn-outline-danger" href="/sightings/{{id}}/delete">REMOVE SQUAD</a>
-        </p>
-    {{/each}}
-
+    </div>
 
 {{/partial}}
 

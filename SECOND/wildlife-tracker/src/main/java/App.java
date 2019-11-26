@@ -44,10 +44,10 @@ public class App {
         get("/animal-details/:id",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
             int idOfEndangeredAnimal=Integer.parseInt(req.params("id"));
-            EndangeredAnimal foundEndangeredAnimal=EndangeredAnimal.find(idOfEndangeredAnimal);
-            model.put("foundEndangeredAnimal",foundEndangeredAnimal);
+            EndangeredAnimal foundAnimal=EndangeredAnimal.find(idOfEndangeredAnimal);
+            model.put("animals",foundAnimal);
             model.put("sightings",Sighting.all());
-            return new ModelAndView(model, "animals.details.hbs");
+            return new ModelAndView(model, "animal-details.hbs");
         }, new HandlebarsTemplateEngine());
 
         //get sighting by id
@@ -55,7 +55,10 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             int idOfSighting=Integer.parseInt(req.params("id"));
             Sighting foundSighting=Sighting.find(idOfSighting);
-            model.put("foundSighting",foundSighting);
+            EndangeredAnimal enim = EndangeredAnimal.find(foundSighting.getAnimalid());
+            System.out.println(foundSighting.getRangername());
+            model.put("sightings",foundSighting);
+            model.put("animal",enim);
             model.put("animals",EndangeredAnimal.all());
             return new ModelAndView(model, "sighting-details.hbs");
         }, new HandlebarsTemplateEngine());
@@ -87,8 +90,8 @@ public class App {
         //get: delete an individual animal
         get("/animals/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int idOfAnimalToDelete = Integer.parseInt(req.params("id")); //pull id - must match route segment
-            EndangeredAnimal deleteAnimal = EndangeredAnimal.find(idOfAnimalToDelete); //use it to find post
+            int idOfAnimalToDelete = Integer.parseInt(req.params("id"));
+            EndangeredAnimal deleteAnimal = EndangeredAnimal.find(idOfAnimalToDelete);
             deleteAnimal.delete();
             return new ModelAndView(model, "animals.hbs");
         }, new HandlebarsTemplateEngine());
@@ -96,8 +99,8 @@ public class App {
         //get: delete an individual sighting
         get("/sightings/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int idOfSightingToDelete = Integer.parseInt(req.params("id")); //pull id - must match route segment
-            Sighting deleteSighting = Sighting.find(idOfSightingToDelete); //use it to find post
+            int idOfSightingToDelete = Integer.parseInt(req.params("id"));
+            Sighting deleteSighting = Sighting.find(idOfSightingToDelete);
             deleteSighting.delete();
             return new ModelAndView(model, "sightings.hbs");
         }, new HandlebarsTemplateEngine());

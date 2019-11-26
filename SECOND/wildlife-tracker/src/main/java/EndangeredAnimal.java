@@ -34,6 +34,18 @@ public class EndangeredAnimal extends Animal{
         return DATABASE_TYPE;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setHealth(String health) {
+        this.health = health;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     public static List<EndangeredAnimal> all() {
         String sql = "SELECT * FROM animals ;";
         try(Connection con = DB.sql2o.open()) {
