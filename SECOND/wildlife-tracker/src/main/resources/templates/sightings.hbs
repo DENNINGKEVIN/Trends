@@ -1,26 +1,7 @@
-<!--{{#partial "content"}}-->
-
-<!--    <h1>All Sightings</h1>-->
-<!--    {{#if sightings}}-->
-<!--        <div class="row">-->
-<!--            <ul >-->
-<!--                {{#each sightings}}-->
-<!--                    <li><a href="/sightings-details/{{id}}">{{name}}</a></li>-->
-<!--                {{/each}}-->
-<!--            </ul>-->
-
-<!--        </div>-->
-<!--    {{else}}-->
-<!--        <p style="color:white;">No sightings Yet.</p>-->
-<!--    {{/if}}-->
-
-<!--{{/partial}}-->
-<!--{{> layout.hbs }}-->
-
 {{#partial "content"}}
     <div >
-        {{#if foundSighting}}
-            <table class="table">
+        {{#if sightings}}
+            <table class="table" style="color:white;">
                 <caption>List of sightings</caption>
                 <thead>
                 <tr>
@@ -31,24 +12,26 @@
                 </tr>
                 </thead>
                 <tbody>
+                {{#each foundSighting}}
                 <tr>
                     <th scope="row">1</th>
-                    {{#each foundSighting}}
-                        <td>{{ foundSighting.location }}</td>
-                    {{/each}}
+
+                        <td>{{ location }}</td>
+
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    {{#each foundSighting}}
-                        <td>{{ foundSighting.rangername }}</td>
-                    {{/each}}
+
+                        <td>{{ rangername }}</td>
+
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    {{#each foundSighting}}
-                        <td>{{ foundSighting.animalid }}</td>
-                    {{/each}}
+
+                        <td>{{ animalid }}</td>
+
                 </tr>
+                {{/each}}
                 </tbody>
             </table>
 

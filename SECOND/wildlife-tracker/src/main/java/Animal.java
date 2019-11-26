@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Animal {
+public  class Animal {
  public int id;
  public String name;
  public String type;
 
-//   public Animal(String name){
-//    this.name=name;
-//   }
+   public Animal(String name){
+    this.name=name;
+   }
 
     public String getName() {
         return name;
@@ -19,6 +19,14 @@ public abstract class Animal {
 
     public int getId() {
         return id;
+    }
+    public static List<EndangeredAnimal> all() {
+        String sql = "SELECT * FROM animals ";
+        try(Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(EndangeredAnimal.class);
+        }
     }
 
     public void save() {

@@ -11,6 +11,7 @@ public class EndangeredAnimal extends Animal{
     public static final String DATABASE_TYPE = "endangered";
 
     public EndangeredAnimal(String name,String health,String age){
+        super(name);
         this.name=name;
         this.health=health;
         this.age=age;
