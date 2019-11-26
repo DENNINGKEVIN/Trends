@@ -120,9 +120,9 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String location = req.queryParams("location");
             String rangername = req.queryParams("rangername");
-            String animalid = Integer.parseInt(req.queryParams("animalid"));
+            int animalid = Integer.parseInt(req.queryParams("animalid"));
             Sighting sighting = new Sighting(location,rangername,animalid);
-            animal.save();
+            sighting.save();
             model.put("sightings",Sighting.all());
             model.put("animals",EndangeredAnimal.all());
             return new ModelAndView(model, "success.hbs");

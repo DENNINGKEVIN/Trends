@@ -1,39 +1,14 @@
 {{#partial "content"}}
     <div >
         {{#if sightings}}
-            <table class="table" style="color:white;">
-                <caption>List of sightings</caption>
-                <thead>
-                <tr>
-                    <th scope="col">{{id}}</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Ranger Name</th>
-                    <th scope="col">Animal</th>
-                </tr>
-                </thead>
-                <tbody>
-                {{#each foundSighting}}
-                <tr>
-                    <th scope="row">1</th>
+<ul>
+    {{#each sightings}}
+        <li><a href="/sighting-details/{{id}}">{{foundSightings.name}}</a></li>
+    {{/each}}
 
-                        <td>{{ location }}</td>
+</ul>
 
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
 
-                        <td>{{ rangername }}</td>
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-
-                        <td>{{ animalid }}</td>
-
-                </tr>
-                {{/each}}
-                </tbody>
-            </table>
 
         {{else}}
             <p style="color:white;">No Sightings Yet.</p>

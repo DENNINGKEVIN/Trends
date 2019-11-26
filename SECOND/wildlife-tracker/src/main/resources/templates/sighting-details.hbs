@@ -1,0 +1,18 @@
+
+{{#partial "content"}}
+    {{#each squads}}
+        <p class="font-weight-bold">Location: {{ name }}</p>
+        <p class="font-weight-bold">Ranger Name: {{ cause}}</p>
+        <p class="font-weight-bold">Animal: {{ animal.name }}</p>
+
+
+        <p>
+            <!--            <a class="btn btn-outline-primary" href="/squad/{{id}}/update">Edit Squad Details</a>-->
+            <a class="btn btn-outline-danger" href="/sightings/{{id}}/delete">REMOVE SQUAD</a>
+        </p>
+    {{/each}}
+
+
+{{/partial}}
+
+{{> layout.hbs}}

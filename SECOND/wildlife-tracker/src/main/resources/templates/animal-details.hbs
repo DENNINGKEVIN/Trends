@@ -1,0 +1,18 @@
+
+{{#partial "content"}}
+    {{#each animals}}
+        <p class="font-weight-bold">Name: {{ name }}</p>
+        <p class="font-weight-bold">Health: {{ health}}</p>
+        <p class="font-weight-bold">Age: {{ age }}</p>
+
+
+        <p>
+            <!--            <a class="btn btn-outline-primary" href="/squad/{{id}}/update">Edit Squad Details</a>-->
+            <a class="btn btn-outline-danger" href="/animalss/{{id}}/delete">REMOVE aANIMAL</a>
+        </p>
+    {{/each}}
+
+
+{{/partial}}
+
+{{> layout.hbs}}
