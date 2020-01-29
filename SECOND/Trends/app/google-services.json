@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1043337478773",
+    "firebase_url": "https://trends-2616a.firebaseio.com",
+    "project_id": "trends-2616a",
+    "storage_bucket": "trends-2616a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043337478773:android:2476329b559755f5cd6e3c",
+        "android_client_info": {
+          "package_name": "com.mulama.trends"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043337478773-aal0t78chuolnqkblg3g43h9jsv8cbc9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mulama.trends",
+            "certificate_hash": "143aca0f80564546c8f9a8dcf5f2363e4e6527cc"
+          }
+        },
+        {
+          "client_id": "1043337478773-i7iu3fpe69bhuoj9kvo6l0t2s51327v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA18pLSMmOb2uJu_7Xkoo0FG2ks0DCOvfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043337478773-i7iu3fpe69bhuoj9kvo6l0t2s51327v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

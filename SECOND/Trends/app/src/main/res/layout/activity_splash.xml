@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@drawable/wall">
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:id="@+id/text2"
+            android:text="All trending fashion at the tip of your fingers"
+            android:layout_below="@id/text1"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/delius_swash_caps"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/delius_swash_caps"
+            android:text="Welcome to Trends"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp" />
+
+    </RelativeLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView2"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/coats"
+            android:layout_centerInParent="true"
+
+            />
+
+    <Button
+    android:id="@+id/splashButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+    android:background="@color/common_google_signin_btn_text_light_default"
+    android:fontFamily="monospace"
+    android:padding="3dp"
+    android:text="Advance"
+        android:layout_marginBottom="30dp"
+    android:textColor="#009688"
+    android:textSize="17sp"
+    android:textStyle="bold" />
+
+
+
+</RelativeLayout>

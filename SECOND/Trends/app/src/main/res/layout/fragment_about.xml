@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bear"
+    >
+
+    <TextView
+        android:id="@+id/about1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+
+        android:text="About Us"
+        android:textColor="#C0CA33"
+        android:textSize="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/about2"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Trends"
+        android:textColor="#C0CA33"
+        android:textSize="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@id/about1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/about3"
+        android:textAlignment="center"
+        android:textColor="#C0CA33"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="Trends is an android app designed to list the latest fashion trends with upto date standards.Through trends you can know all you need to know about the latest fashion designs and recommendations"
+        android:layout_below="@id/about2"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/about4"
+        android:textSize="15dp"
+        android:textColor="#C0CA33"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="All you fashion Addicts out there....this is the place to be!"
+        android:layout_below="@id/about3"/>
+
+
+</RelativeLayout>
